@@ -5,7 +5,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
-void error_handling(char* message);
+void error_handling(const char* message);
 
 int main(int argc, char* argv[]) {
 	int serv_sock;
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 
-void error_handling(char* message) {
+void error_handling(const char* message) {
 	fputs(message, stderr);
 	fputc('\n', stderr);
 	exit(1);
