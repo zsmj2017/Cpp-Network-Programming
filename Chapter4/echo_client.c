@@ -45,7 +45,7 @@ int main(int argc, char * argv[]) {
 		}
 
 		write(sock, message, strlen(message));
-		str_len = read(sock, message, BUF_SIZE);
+		str_len = read(sock, message, BUF_SIZE - 1);
 		message[str_len] = 0;
 		printf("Message from server : %s \n", message);
 	}
