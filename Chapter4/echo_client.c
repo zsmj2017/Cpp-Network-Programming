@@ -44,6 +44,8 @@ int main(int argc, char * argv[]) {
 			break;
 		}
 
+		// tcp没有数据边界,因此并不适合采用此种做法实现echo
+		// 举例而言，若数据较大，read一次仅能读取部分数据片段
 		write(sock, message, strlen(message));
 		str_len = read(sock, message, BUF_SIZE - 1);
 		message[str_len] = 0;
