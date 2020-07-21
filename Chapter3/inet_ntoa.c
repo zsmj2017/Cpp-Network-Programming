@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 
     // inet_atoa内的字符串再获取后必须立刻拷贝
     str_ptr = inet_ntoa(addr1.sin_addr);
-    strcpy(str_arr, str_ptr);
+    snprintf(str_arr, sizeof(str_arr), str_ptr);
     printf("Dotted_Decimal notation1: %s \n", str_ptr);
 
     inet_ntoa(addr2.sin_addr);
